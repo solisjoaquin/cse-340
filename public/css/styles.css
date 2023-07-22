@@ -3,94 +3,139 @@
 *:before,
 *:after {
   box-sizing: border-box;
+  margin: 0;
+}
+
+/********** declare styles variables ***************/
+:root {
+  --main-color: #3a3a3a;
+  --secondary: #ffffff;
+  --terciary: #4c96d7;
+}
+
+a {
+  text-decoration: none;
 }
 
 body {
-  background-image: url("/phpmotors/images/site/small_check.jpg");
   font-family: "Sofia Sans", sans-serif;
+  background-image: url("../images/site/checkerboard.jpg");
+  background-repeat: repeat;
+}
+
+#top-header {
+  color: var(--main-color);
+  background-color: var(--secondary);
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 80rem;
+  margin: auto;
+}
+
+.siteName {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.tools {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#nav {
+  background-color: var(--main-color);
+  color: var(--secondary);
+  max-width: 80rem;
+  margin: auto;
+}
+
+#nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem 1rem;
+  list-style: none;
 }
 
 #section {
   padding: 1em;
-  background-color: white;
+  background-color: var(--secondary);
   border-style: solid;
   border-color: #4c96d7;
   margin: auto;
   max-width: 80rem;
 }
 
-#header a {
-  float: right;
-  text-decoration: none;
-  color: #3a3a3a;
+.first-section {
+  margin: auto;
 }
 
-#nav {
-  background-color: #3a3a3a;
-  color: #ffffff;
-  padding: 0.5em 0;
-}
-
-#nav li {
-  display: inline;
-}
-
-#nav a {
-  text-decoration: none;
-  color: #ffffff;
-  padding: 1em;
-}
-
-#nav a:hover {
-  background-color: #4c96d7;
-  color: #3a3a3a;
-}
-
-h1 {
-  padding-bottom: 0.5em;
-  border-bottom: solid;
-  border-color: #3a3a3a;
-}
-
-#footer p {
-  text-align: center;
-}
-
-.description {
-  color: #3a3a3a;
-}
-
-.description img {
-  width: 100%;
+.cta-section {
   position: relative;
 }
 
-.description h2 {
-  color: #4c96d7;
+.cta-box {
+  background-color: rgba(174, 175, 174, 0.5);
+  color: var(--terciary);
+  padding: 1rem;
+  margin: 1rem;
+  position: absolute;
+  top: 0;
 }
 
-.description p {
-  color: #4c96d7;
+.cta-box button {
+  background-color: var(--terciary);
+  color: var(--secondary);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1rem;
 }
 
-.button {
-  padding: 0.5em 1em;
+/*media queries*/
+
+.second-section {
+  padding-top: 3rem;
+}
+
+.second-section-reviews {
+  padding-bottom: 2rem;
+}
+
+.second-section-reviews ul li {
+  padding: 10px 5px;
+}
+
+@media (min-width: 768px) {
+  .second-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: top;
+  }
+}
+
+.upgrades-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  width: 100%;
+}
+
+.upgrades-grid-item {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: #4c96d7;
-  color: #3a3a3a;
-  font-size: large;
+  color: var(--secondary);
 }
 
-@media only screen and (min-width: 34rem) {
-  .upgrades {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .upgrades section:nth-of-type(1) {
-    order: 2;
-  }
-
-  .upgrades section:nth-of-type(2) {
-    order: 1;
-  }
+.upgrades-grid-item img {
+  height: 100px;
 }
